@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Like">
+	<select id="listAllbySeq" parameterType="_int" resultType="likeVO">
+		SELECT * FROM TBL_LIKE
+		WHERE EXHIBITION_SEQ=#{exhibition_seq}
+	</select>
+	
+	<insert id="like" parameterType="likeVO">
+		INSERT INTO TBL_LIKE
+		(MEMBER_SEQ, EXHIBITION_SEQ)
+		VALUES(#{member_seq}, #{exhibition_seq})
+	</insert>
+	
+	<delete id="cancel" parameterType="likeVO">
+		DELETE FROM TBL_LIKE
+		WHERE MEMBER_SEQ=#{member_seq} AND EXHIBITION_SEQ=#{exhibition_seq}
+	</delete>
+	
+	<select id="getLikeCnt" parameterType="_int" resultType="_int">
+		SELECT COUNT(EXHIBITION_SEQ) FROM TBL_LIKE WHERE EXHIBITION_SEQ=#{exhibition_seq} 
+	</select>
+	
+	<delete id="deleteAll" parameterType="_int">
+		DELETE FROM TBL_LIKE WHERE EXHIBITION_SEQ = #{exhibition_seq}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

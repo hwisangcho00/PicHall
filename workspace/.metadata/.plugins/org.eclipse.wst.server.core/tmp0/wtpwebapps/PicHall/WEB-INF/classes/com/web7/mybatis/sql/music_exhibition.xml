@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MusicExhibition">
+	<select id="checkIsNew" resultType="_int">
+		SELECT COUNT(*) FROM TBL_MUSIC_EXHIBITION WHERE EXHIBITION_SEQ = #{exhibition_seq}
+	</select>
+	
+	<insert id="insertMusicExhibition" parameterType="music_exhibitionVO">
+		INSERT INTO TBL_MUSIC_EXHIBITION
+		VALUES(#{music_seq}, #{exhibition_seq})
+	</insert>
+	
+	<delete id="deleteAll" parameterType="_int">
+		DELETE FROM TBL_MUSIC_EXHIBITION WHERE EXHIBITION_SEQ = #{exhibition_seq}
+	</delete>
+	
+	<delete id="delete" parameterType="_int">
+		DELETE FROM TBL_MUSIC_EXHIBITION WHERE MUSIC_SEQ = #{music_seq}
+	</delete>
+	
+	<select id="getMusicbySeq" parameterType="_int" resultType="music_exhibitionVO">
+		SELECT * FROM TBL_MUSIC_EXHIBITION 
+		WHERE EXHIBITION_SEQ=#{exhibition_seq}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

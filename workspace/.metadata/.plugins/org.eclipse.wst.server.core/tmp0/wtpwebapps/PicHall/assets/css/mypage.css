@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+#mp_id{
+	font-size:20px;
+}
+
+#mp_name{
+	font-size:30px;
+}
+
+li {
+   list-style: none;
+}
+
+@font-face {
+	font-family: 'MaruBuri-Regular';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'MaruBuri-Regular' !important;
+}
+
+#MP_table {
+	background-color: #c9cad3 !important;
+}
+
+#profile {
+	display: block; /* 이미지를 블럭요소로 만듦 */
+	border-radius: 30%;
+	padding: 10px;
+}
+
+#MP_div {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#MP_div1 {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*아래부터는 modal css  */
+ul {
+	list-style: none;
+	margin: none;
+}
+
+a {
+	border-bottom: none;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%; /* Could be more or less, depending on screen size */
+	z-index: 10004;
+}
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#dragandrophandler {
+	border: 2px dotted #0B85A1;
+	color: #92AAB0;
+	text-align: center;
+	vertical-align: middle;
+	padding: 100px;
+	margin-bottom: 10px;
+	font-size: 200%;
+}
+
+/* 모달 창 */
+.modal_list {
+	width: 100%;
+	/* white-space: nowrap; */
+}
+
+.modal_li {
+	width: 24%;
+	display: inline-block;
+}
+
+.modal_li .btn {
+	width: 100%;
+	text-align: center;
+}
+
+.profile_pic_col {
+	width: 36.33%;
+}
+
+@media screen and (max-width: 980px) {
+   #navPanelToggle {
+      display: none !important;
+   }
+}
+
+@media screen and (max-width: 900px) {
+	.modal_li .btn {
+		font-size: 0.7em;
+		padding: 0 0;
+	}
+	.profile_pic_col {
+		width: 50%;
+	}
+	
+	.modal-content{
+		width:70%;
+	}
+}
+
+@media screen and (max-width: 736px) {
+   /* Modal Content/Box */
+   .modal-content {
+      width: 80%; /* Could be more or less, depending on screen size */
+      font-size: 100%;
+      margin: 30% auto;
+   }   
+   #dragandrophandler{
+       font-size:150%;
+       padding: 50px;
+   }
+}
+
+@media screen and (max-width: 480px) {
+	.modal_li .btn {
+		font-size: 5px;
+		padding: 0 0;
+	}
+	.profile_pic_col {
+		width: 66.666%;
+	}
+}
+
+/* 더보기 버튼 */
+#more{
+ display:block;
+ margin:0 auto;
+}

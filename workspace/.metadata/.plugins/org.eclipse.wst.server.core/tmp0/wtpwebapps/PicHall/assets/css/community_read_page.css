@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+#title_header{
+	border-left: gray 1px solid;
+	padding-left: 0.5em;
+}
+
+.title {
+	margin-left:0.5em;
+	font-size: 175%;
+}
+
+.date, .view, .writer{
+	margin-left:0.5em;
+	font-size: 75%;
+}
+
+#text{
+	border: #161d266e 1px solid;
+	min-height:50vh;
+}
+
+/* 댓글 */
+.col-12.comment_text{
+	font-size:90%;
+}
+
+.col-12.comment_detail{
+	text-align:right;
+}
+
+.comment_detail .col-3{
+	display:inline;
+	width:15%;
+}
+

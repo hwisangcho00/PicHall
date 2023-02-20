@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="NodeList/OraclePrivTable">
+		<column name="Privilege" visible="true" order="0" width="100"/>
+		<column name="Grantee" visible="true" order="1" width="100"/>
+		<column name="Grantor" visible="true" order="2" width="100"/>
+		<column name="Grantable" visible="true" order="3" width="100"/>
+		<column name="Hierarchy" visible="true" order="4" width="100"/>
+	</item>
+	<item id="NodeList/OracleTableColumn">
+		<column name="Column Name" visible="true" order="0" width="170"/>
+		<column name="#" visible="true" order="1" width="27"/>
+		<column name="Type" visible="true" order="2" width="100"/>
+		<column name="Type Mod" visible="true" order="3" width="67"/>
+		<column name="Not Null" visible="true" order="4" width="59"/>
+		<column name="Default" visible="true" order="5" width="52"/>
+		<column name="Comment" visible="true" order="6" width="68"/>
+	</item>
+	<item id="NodeList/OracleTableForeignKey">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Owner" visible="true" order="1" width="100"/>
+		<column name="Ref Table" visible="true" order="2" width="100"/>
+		<column name="Type" visible="true" order="3" width="100"/>
+		<column name="Ref Object" visible="true" order="4" width="100"/>
+		<column name="On Delete" visible="true" order="5" width="100"/>
+		<column name="Status" visible="true" order="6" width="100"/>
+	</item>
+	<item id="NodeList/OracleTablePartition">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Position" visible="true" order="1" width="100"/>
+		<column name="Usable" visible="true" order="2" width="100"/>
+		<column name="Tablespace" visible="true" order="3" width="100"/>
+		<column name="High Value" visible="true" order="4" width="100"/>
+		<column name="Rows" visible="true" order="5" width="100"/>
+		<column name="Sample Size" visible="true" order="6" width="100"/>
+		<column name="Last Analyzed" visible="true" order="7" width="100"/>
+	</item>
+	<item id="NodeList/OracleTableTrigger">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Table" visible="true" order="1" width="100"/>
+		<column name="Trigger Type" visible="true" order="2" width="100"/>
+		<column name="Object Type" visible="true" order="3" width="100"/>
+		<column name="Event" visible="true" order="4" width="100"/>
+		<column name="Column" visible="true" order="5" width="100"/>
+		<column name="Status" visible="true" order="6" width="100"/>
+		<column name="Action Type" visible="true" order="7" width="100"/>
+	</item>
+</items>

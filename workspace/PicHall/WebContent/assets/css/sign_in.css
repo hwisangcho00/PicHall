@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+#main>.post {
+	padding: 2rem 8rem 2rem 8rem;
+}
+/* modal css 긁어옴 */
+ul {
+	list-style: none;
+	margin: none;
+}
+
+a {
+	border-bottom: none;
+}
+
+label {
+	font-family: inherit;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+	z-index: 10004;
+}
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#dragandrophandler {
+	border: 2px dotted #0B85A1;
+	width: 400px;
+	color: #92AAB0;
+	text-align: left;
+	vertical-align: middle;
+	padding: 10px 10px 10 10px;
+	margin-bottom: 10px;
+	font-size: 200%;
+}
+
+</
+style> <style>#sign_up_btn {
+	float: right;
+}
+
+@media screen and (max-width: 736px) {
+	#img_wrap {
+		display: none;
+	}
+	body {
+		font-size: 0.9em;
+	}
+	#sign_up_wrap {
+		margin: 0 auto;
+		width: 66.666%
+	}
+	.btn {
+		display: block;
+		margin: 0 auto;
+	}
+	#sign_btn_wrap{
+		margin: 0 auto;
+		width: 66.666%
+	}
+	#main>.post {
+		padding: 4rem 2rem 2rem 2rem;
+	}
+	.col-12{
+		padding-left: 0;
+    	display: flex;
+    	justify-content: center;
+	}
+	.checkbox{
+		   margin-left: 1rem;
+	}
+	
+
+}

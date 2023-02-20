@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Comment">
+	
+	<select id="getCnt" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM TBL_COMMENT WHERE BOARD_SEQ = #{board_seq}
+	</select>
+	
+	<select id="getCommentList" parameterType="_int" resultType="commentVO">
+		SELECT * FROM TBL_COMMENT WHERE BOARD_SEQ = #{board_seq}
+	</select>
+	
+	<delete id="deleteAllComment" parameterType="_int">
+		DELETE FROM TBL_COMMENT WHERE BOARD_SEQ = ${board_seq}
+	</delete>	
+
+	<delete id="deleteComment" parameterType="_int">
+		DELETE FROM TBL_COMMENT WHERE COMMENT_SEQ = ${comment_seq}
+	</delete>	
+	
+	<insert id="insertComment" parameterType="commentVO">
+		INSERT INTO TBL_COMMENT VALUES(TBL_COMMENT_SEQ.NEXTVAL, #{board_seq}, #{comment_text}, SYSDATE, #{member_seq})
+	</insert>
+	
+	<update id="modifyComment" parameterType="commentVO">
+		UPDATE TBL_COMMENT
+		SET COMMENT_TEXT = #{comment_text}
+		WHERE COMMENT_SEQ = #{comment_seq}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

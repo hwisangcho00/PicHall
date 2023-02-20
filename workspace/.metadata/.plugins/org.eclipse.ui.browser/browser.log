@@ -1,0 +1,66 @@
+
+Dec 12, 2020 01:30:32.04 NEW SESSION
+Dec 12, 2020 01:30:32.04 [7848:5080:1212/013032.038:ERROR:device_event_log_impl.cc(211)] [01:30:32.038] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 12, 2020 01:30:32.04 [7848:5080:1212/013032.039:ERROR:device_event_log_impl.cc(211)] [01:30:32.039] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Dec 18, 2020 20:43:22.69 NEW SESSION
+Dec 18, 2020 20:43:22.69 [2412:10652:1218/204322.687:ERROR:device_event_log_impl.cc(211)] [20:43:22.688] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 18, 2020 20:43:22.69 [2412:10652:1218/204322.688:ERROR:device_event_log_impl.cc(211)] [20:43:22.688] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Dec 21, 2020 20:06:11.58 NEW SESSION
+Dec 21, 2020 20:06:11.58 [2100:2392:1221/200611.580:ERROR:device_event_log_impl.cc(211)] [20:06:11.581] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 21, 2020 20:06:11.58 [2100:2392:1221/200611.581:ERROR:device_event_log_impl.cc(211)] [20:06:11.582] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Dec 26, 2020 16:59:39.53 NEW SESSION
+Dec 26, 2020 16:59:39.53 [12320:20272:1226/165939.536:ERROR:device_event_log_impl.cc(211)] [16:59:39.537] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 26, 2020 16:59:39.54 [12320:20272:1226/165939.537:ERROR:device_event_log_impl.cc(211)] [16:59:39.537] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 26, 2020 17:08:03.11 [14960:5448:1226/170803.113:ERROR:device_event_log_impl.cc(211)] [17:08:03.112] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 26, 2020 17:08:03.11 [14960:5448:1226/170803.113:ERROR:device_event_log_impl.cc(211)] [17:08:03.113] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 26, 2020 17:17:59.74 [1226/171759.740:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+Dec 26, 2020 17:36:33.84 [14960:5448:1226/173633.846:ERROR:device_event_log_impl.cc(211)] [17:36:33.846] USB: usb_service_win.cc:258 Failed to get device driver name: Element not found. (0x490)
+Dec 26, 2020 17:38:58.36 [14960:5448:1226/173858.367:ERROR:fallback_task_provider.cc(118)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+Dec 26, 2020 17:54:01.43 [14960:5448:1226/175401.436:ERROR:fallback_task_provider.cc(118)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+Dec 26, 2020 17:58:13.72 [14960:5448:1226/175813.725:ERROR:fallback_task_provider.cc(118)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+Dec 26, 2020 17:58:24.95 [14960:5448:1226/175824.952:ERROR:fallback_task_provider.cc(118)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+Dec 26, 2020 18:03:51.32 [14960:5448:1226/180351.322:ERROR:fallback_task_provider.cc(118)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+Dec 26, 2020 18:33:24.28 [14960:5448:1226/183324.280:ERROR:fallback_task_provider.cc(118)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+Dec 26, 2020 19:15:18.92 [14960:5448:1226/191518.927:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'isAnonymousInlineStyleSheet' of null", source:  (0)
+
+Dec 26, 2020 21:36:59.66 NEW SESSION
+Dec 26, 2020 21:36:59.66 [19164:984:1226/213659.653:ERROR:device_event_log_impl.cc(211)] [21:36:59.653] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 26, 2020 21:36:59.66 [19164:984:1226/213659.654:ERROR:device_event_log_impl.cc(211)] [21:36:59.654] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 26, 2020 21:38:51.90 [8544:17708:1226/213851.906:ERROR:device_event_log_impl.cc(211)] [21:38:51.905] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 26, 2020 21:38:51.90 [8544:17708:1226/213851.906:ERROR:device_event_log_impl.cc(211)] [21:38:51.905] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+
+Dec 28, 2020 22:15:39.05 NEW SESSION
+Dec 28, 2020 22:15:39.05 [23740:15588:1228/221539.051:ERROR:device_event_log_impl.cc(211)] [22:15:39.050] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 28, 2020 22:15:39.05 [23740:15588:1228/221539.051:ERROR:device_event_log_impl.cc(211)] [22:15:39.050] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 28, 2020 22:25:36.58 [1228/222536.586:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+
+Dec 30, 2020 21:20:07.97 NEW SESSION
+Dec 30, 2020 21:20:07.97 [3728:11680:1230/212007.968:ERROR:device_event_log_impl.cc(211)] [21:20:07.968] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 30, 2020 21:20:07.97 [3728:11680:1230/212007.969:ERROR:device_event_log_impl.cc(211)] [21:20:07.968] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 30, 2020 21:30:01.68 [1230/213001.688:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+
+Jan 04, 2021 15:32:17.06 NEW SESSION
+Jan 04, 2021 15:32:17.06 [3688:14240:0104/153217.061:ERROR:device_event_log_impl.cc(211)] [15:32:17.060] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 04, 2021 15:32:17.06 [3688:14240:0104/153217.062:ERROR:device_event_log_impl.cc(211)] [15:32:17.062] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 04, 2021 15:42:09.48 [0104/154209.481:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+Jan 04, 2021 15:51:40.74 [15740:12608:0104/155140.748:ERROR:device_event_log_impl.cc(211)] [15:51:40.747] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 04, 2021 15:51:40.75 [15740:12608:0104/155140.748:ERROR:device_event_log_impl.cc(211)] [15:51:40.748] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 04, 2021 16:01:24.28 [15740:12608:0104/160124.279:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'isAnonymousInlineStyleSheet' of null", source:  (0)
+Jan 04, 2021 16:01:37.53 [0104/160137.536:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+Jan 04, 2021 16:22:31.99 [15740:12608:0104/162231.989:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'isAnonymousInlineStyleSheet' of null", source:  (0)
+
+Jan 06, 2021 16:02:23.17 NEW SESSION
+Jan 06, 2021 16:02:23.17 [3148:9840:0106/160223.174:ERROR:device_event_log_impl.cc(211)] [16:02:23.174] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 06, 2021 16:02:23.17 [3148:9840:0106/160223.174:ERROR:device_event_log_impl.cc(211)] [16:02:23.174] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 06, 2021 16:12:17.18 [0106/161217.184:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+Jan 06, 2021 17:14:18.09 [3148:9840:0106/171418.096:ERROR:device_event_log_impl.cc(211)] [17:14:18.094] USB: usb_service_win.cc:258 Failed to get device driver name: Element not found. (0x490)
+Jan 06, 2021 17:14:18.11 [3148:9840:0106/171418.113:ERROR:device_event_log_impl.cc(211)] [17:14:18.112] USB: usb_service_win.cc:281 SetupDiEnumDeviceInterfaces: No more data is available. (0x103)
+Jan 06, 2021 17:15:05.02 [3148:9840:0106/171505.023:ERROR:CONSOLE(3)] "One popover is already visible", source: devtools://devtools/bundled/ui/ui.js (3)
+Jan 06, 2021 17:15:05.64 [3148:9840:0106/171505.640:ERROR:CONSOLE(3)] "One popover is already visible", source: devtools://devtools/bundled/ui/ui.js (3)
+Jan 06, 2021 17:23:09.31 [19560:14472:0106/172309.312:ERROR:device_event_log_impl.cc(211)] [17:23:09.311] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 06, 2021 17:23:09.31 [19560:14472:0106/172309.313:ERROR:device_event_log_impl.cc(211)] [17:23:09.312] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Jan 06, 2021 17:32:59.94 [0106/173259.941:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+Jan 06, 2021 17:39:45.15 [19560:14472:0106/173945.158:ERROR:CONSOLE(3)] "One popover is already visible", source: devtools://devtools/bundled/ui/ui.js (3)

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Music">
+	<select id="getMusicList" parameterType="_int" resultType="musicVO">
+		SELECT * FROM TBL_MUSIC WHERE MEMBER_SEQ = #{member_seq}
+	</select>
+	
+	<select id="getMusic" parameterType="_int" resultType="musicVO">
+		SELECT * FROM TBL_MUSIC WHERE MUSIC_SEQ = #{music_seq}
+	</select>
+	
+	<select id="getMusicCnt" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM TBL_MUSIC WHERE MEMBER_SEQ = #{member_seq}
+	</select>
+	
+	<select id="getSeq" resultType="_int">
+		SELECT TBL_MUSIC_SEQ.CURRVAL FROM DUAL
+	</select>
+	
+	<insert id="insertMusic" parameterType="musicVO">
+		INSERT INTO TBL_MUSIC 
+		VALUES(TBL_MUSIC_SEQ.NEXTVAL, #{music_title}, #{music_artist}, #{music_data}, #{member_seq})
+	</insert>
+	
+	<delete id="deleteMusic" parameterType="_int">
+		DELETE FROM TBL_MUSIC WHERE MUSIC_SEQ = #{music_seq}
+	</delete>
+	
+	<update id="modifyMusic" parameterType="musicVO">
+		UPDATE TBL_MUSIC
+		SET MUSIC_TITLE = #{music_title}, MUSIC_ARTIST = #{music_artist}
+		WHERE MUSIC_SEQ = #{music_seq}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

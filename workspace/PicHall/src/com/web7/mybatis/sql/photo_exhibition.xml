@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PhotoExhibition">
+	<select id="checkIsNew" resultType="_int">
+		SELECT COUNT(*) FROM TBL_PHOTO_EXHIBITION WHERE EXHIBITION_SEQ = #{exhibition_seq}
+	</select>
+	
+	<insert id="insertPhotoExhibition" parameterType="photo_exhibitionVO">
+		INSERT INTO TBL_PHOTO_EXHIBITION
+		VALUES(#{photo_seq}, #{exhibition_seq})
+	</insert>
+ 	
+	<delete id="deleteAll" parameterType="_int">
+		DELETE FROM TBL_PHOTO_EXHIBITION WHERE EXHIBITION_SEQ = #{exhibition_seq}
+	</delete>
+	
+	<delete id="delete" parameterType="_int">
+		DELETE FROM TBL_PHOTO_EXHIBITION WHERE PHOTO_SEQ = #{photo_seq}
+	</delete>
+	
+	<select id="getPhotobySeq" parameterType="_int" resultType="photo_exhibitionVO">
+		SELECT * FROM TBL_PHOTO_EXHIBITION 
+		WHERE EXHIBITION_SEQ=#{exhibition_seq}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

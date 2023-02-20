@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Photo">
+	<!-- 사진업로드 -->
+	<insert id="insertPhoto" parameterType="photoVO">
+		INSERT INTO TBL_PHOTO 
+		(PHOTO_SEQ, PHOTO_DATA, PHOTO_NAME, PHOTO_TEXT, MEMBER_SEQ)
+		VALUES(TBL_PHOTO_SEQ.NEXTVAL, #{photo_data}, #{photo_name}, #{photo_text}, #{member_seq})
+	</insert>
+	<!-- <select id="getDetailPhoto" parameterType="_int" resultType="photoVO">
+		SELECT * FROM TBL_PHOTO WHERE PHOTO_SEQ = #{??미작성}
+	</select> -->
+	
+	<!--각 유저에 따른 사진 모음  -->
+	<select id="getPhotoList" parameterType="_int" resultType="photoVO">
+		SELECT * FROM TBL_PHOTO WHERE MEMBER_SEQ=#{member_seq}
+	</select>
+	
+	<!-- 사진 개수 가져오기 -->
+	<select id="getPhotoCnt" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM TBL_PHOTO WHERE MEMBER_SEQ = #{member_seq}
+	</select>
+		
+	<!--사진번호별 사진가져오기  -->
+	<select id="getPhoto" parameterType="_int" resultType="photoVO">
+		SELECT * FROM TBL_PHOTO WHERE PHOTO_SEQ = #{photo_seq}
+	</select>
+	<!--사진번호별 사진_data 가져오기  -->
+	<select id="getPhotoData" parameterType="_int" resultType="string">
+		SELECT PHOTO_DATA FROM TBL_PHOTO WHERE PHOTO_SEQ = #{photo_seq}
+	</select>
+	
+	<!-- 사진 수정 -->
+	<update id="editPhoto" parameterType="photoVO">
+		UPDATE TBL_PHOTO
+		SET PHOTO_NAME= #{photo_name}, PHOTO_TEXT = #{photo_text}
+		WHERE PHOTO_SEQ = #{photo_seq}
+	</update>
+	
+	
+	<!--사진삭제  -->
+	<delete id="deletePhoto" parameterType="_int">
+		DELETE FROM TBL_PHOTO WHERE PHOTO_SEQ = #{photo_seq}
+	</delete>
+</mapper>

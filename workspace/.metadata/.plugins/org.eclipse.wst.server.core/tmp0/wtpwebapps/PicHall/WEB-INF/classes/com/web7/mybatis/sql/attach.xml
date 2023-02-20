@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Attach">
+	<insert id="insertAttach" parameterType="attachVO">
+		INSERT INTO TBL_ATTACH VALUES(TBL_ATTACH_SEQ.NEXTVAL, #{attach_name}, #{board_seq})
+	</insert>
+	
+	<select id="getDetail" parameterType="_int" resultType="attachVO">
+		SELECT * FROM TBL_ATTACH WHERE BOARD_SEQ = ${board_seq}
+	</select>
+	
+	<delete id="deleteAttach" parameterType="_int">
+		DELETE FROM TBL_ATTACH WHERE BOARD_SEQ = ${board_seq}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

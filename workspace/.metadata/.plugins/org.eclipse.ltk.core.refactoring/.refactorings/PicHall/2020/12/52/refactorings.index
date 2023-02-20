@@ -1,0 +1,22 @@
+1608459237336	Move 'member.xml' to 'sql'
+1608459984594	Move 'subscribe' to 'member'
+1608459987420	Move 'subscribe' to 'app'
+1608460626164	Delete element
+1608536510142	Copy file
+1608538291399	Copy file
+1608538875373	Move 'music' to 'app'
+1608542989707	Rename local variable 'mu_VO'
+1608542992850	Rename local variable 'mu_DAO'
+1608549130838	Delete element
+1608622247355	Delete element
+1608623466031	Copy file
+1608653646818	Delete element
+1608656011917	Delete element
+1608708117746	Copy file
+1608715424244	Copy package
+1608715444724	Copy package
+1608715456984	Copy package
+1608715471317	Rename type 'PhotoExhibitionFrontController'
+1608715478136	Rename type 'PhotoExhibitionDAO'
+1608715488219	Rename type 'PhotoExhibitionVO'
+1608715949698	Copy file

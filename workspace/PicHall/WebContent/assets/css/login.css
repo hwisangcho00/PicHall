@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+#main>.post {
+	padding: 2rem 8rem 2rem 8rem;
+}
+
+label {
+	font-family: inherit;
+}
+
+header.major {
+	margin: 0;
+}
+
+@media screen and (max-width: 736px) {
+	#img_wrap {
+		display: none;
+	}
+	body {
+		font-size: 0.9em;
+	}
+	#login_wrap {
+		margin: 0 auto;
+		width: 66.666%
+	}
+	#main>.post {
+		padding: 4rem 2rem 2rem 2rem;
+	}
+}

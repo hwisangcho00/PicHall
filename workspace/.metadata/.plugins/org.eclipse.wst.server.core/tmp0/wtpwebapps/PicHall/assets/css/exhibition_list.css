@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* 최근 전시회 */
+.recent_exhibition_list {
+	width: 100%;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.recent_exhibition_list li {
+	display: inline-block;
+	width: 25%;
+}
+
+.recent_exhibition_list::-webkit-scrollbar {
+	height:10px;
+}
+
+.recent_exhibition_list::-webkit-scrollbar-thumb {
+	background-color: #DCDCDC;
+	border-radius: 10px;
+	background-clip: padding-box;
+	border: 2px solid transparent;
+}
+
+.recent_exhibition_list::-webkit-scrollbar-track {
+	background-color: #A9A9A9;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 5px white;
+}
+/* 전체 전시회 */
+col {
+	width: 25%
+}
+
+#list_wrap {
+	width: 100%
+}
+
+.list_table {
+	 table-layout: fixed;  /* colgroup에 col width로 고정 */
+}
+
+.list_table td {
+	word-break: break-all;
+}
+
+.item_img {
+	margin: 0 auto;
+}
+
+.item_wrap {
+	width: 100%; /* td의 넓이 꽉 채우기 */
+	overflow: hidden;
+}
+
+p.exh_title {
+	margin-bottom: 0px; /* 기존 p 태그 마진 없애기 */
+}
+
+p.exh_artist {
+	margin-bottom: 0px; /* 기존 p 태그 마진 없애기 */
+}
+
+p.exh_date {
+	margin-bottom: 0px; /* 기존 p 태그 마진 없애기 */
+	font-size: 0.75rem;
+}
+
+@media screen and (max-width: 1680px) {
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 736px) {
+}
+
+@media screen and (max-width: 380px) {
+}

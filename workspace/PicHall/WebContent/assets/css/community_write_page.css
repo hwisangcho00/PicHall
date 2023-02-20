@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+/* html, body{
+	height:100%
+}
+
+body{
+	padding:1em 1em 1em 1em;
+	display:flex
+}
+
+#main > * {
+    padding: 2rem 4rem 2rem 4rem;
+} */
+
+#title_input{
+	width:100%;	
+}
+
+.title_wrap{
+	width:60%;
+	display:
+}
+
+.type_wrap{
+	width:40%;	
+}
+
+#board_text{
+	margin-top:0.5em;
+	height:60%;
+}
+
+#board_text::placeholder{
+	font-size:80%;
+}
+
+#board_submit{
+	float:right;
+	margin-top:0.5em;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select, textarea {
+    border-color: #cccccc;
+}

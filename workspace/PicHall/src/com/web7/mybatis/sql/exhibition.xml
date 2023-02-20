@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 파라미터로 받은 값에 접근할 때에는 #{} 또는 ${}를 사용하여 가져온다. 1.#{} 받아온 파라미터의 타입에 상관 없이 
+	String 타입으로 변경된다. 사용자가 직접 입력한 값에 사용하는 것이 좋다(보안에 유리하다) 2.${} 받아온 파라미터의 타입을 
+	그대로 유지한다. 사용자가 직접 입력한 값을 전달받을 때에는 사용하지 않는 것이 좋다(쿼리 주입때문에 보안에 취약하다) 테이블이나 
+	컬러명을 파라미터로 받을 때에 사용한다(#{}는 자동으로 따옴표가 붙기 때문) -->
+
+<mapper namespace="Exhibition">
+	<!--  -->
+	<select id="listAll" parameterType="map" resultType="exhibitionVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_EXHIBITION ORDER BY EXHIBITION_SEQ DESC) D) B
+		WHERE B.R BETWEEN
+		${startRow} AND ${endRow}
+	</select>
+	
+	<select id="listbyLike" parameterType="map" resultType="exhibitionVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_EXHIBITION ORDER BY LIKE_CNT DESC) D) B
+		WHERE B.R BETWEEN
+		${startRow} AND ${endRow}
+	</select>
+	
+	<select id="listbySeq" parameterType="map" resultType="exhibitionVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_EXHIBITION WHERE MEMBER_SEQ=${member_seq} ORDER BY EXHIBITION_SEQ DESC) D) B
+		WHERE (B.R BETWEEN
+		${startRow} AND ${endRow})
+	</select>
+	
+	<select id="listChildAll" parameterType="map" resultType="exhibitionVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_EXHIBITION WHERE CATEGORY_ID=${exhibition_category_id} ORDER BY EXHIBITION_SEQ DESC) D) B
+		WHERE (B.R BETWEEN
+		${startRow} AND ${endRow})
+	</select>
+	
+	<select id="listParentAll" parameterType="map" resultType="exhibitionVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_EXHIBITION WHERE PARENT_CATEGORY_ID =${exhibition_category_id} ORDER BY EXHIBITION_SEQ DESC) D) B
+		WHERE (B.R BETWEEN
+		${startRow} AND ${endRow})
+	</select>
+	
+	<select id="listAllbySeq" parameterType="_int" resultType="exhibitionVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_EXHIBITION ORDER BY EXHIBITION_SEQ DESC) D) B
+		WHERE MEMBER_SEQ=#{member_seq}
+	</select>
+	
+	<!-- 시작날짜 구하기 -->
+	<select id="getStartDate" parameterType="string" resultType="DATE">
+		SELECT TO_DATE(#{start_date},'YYYYMMDD') FROM DUAL
+	</select>
+	
+	<!-- 종료날짜 구하기 -->
+	<select id="getEndDate" parameterType="string" resultType="DATE">
+		SELECT TO_DATE(#{end_date},'YYYYMMDD') FROM DUAL
+	</select>
+	
+	<!-- 전체 전시회 개수 -->
+	<select id="getExhibitionCnt" resultType="_int">
+		SELECT COUNT(*) FROM
+		TBL_EXHIBITION
+	</select>
+	
+	<!-- 멤버의 전시회 개수 -->
+	<select id="getExhibitionCntbySeq" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM
+		TBL_EXHIBITION
+		WHERE MEMBER_SEQ=#{member_seq}
+	</select>
+	
+	<!-- 소카테고리의 전시회 개수 -->
+	<select id="getExhibitionCntbyCategory" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM
+		TBL_EXHIBITION
+		WHERE CATEGORY_ID=#{category_id}
+	</select>
+	
+	<!-- 대카테고리의 전시회 개수 -->
+	<select id="getExhibitionCntbyParentCategory" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM
+		TBL_EXHIBITION
+		WHERE PARENT_CATEGORY_ID=#{category_id}
+	</select>
+	
+	   <!-- 전시회 추가 -->
+   <insert id="insertExhibition" parameterType="exhibitionVO">
+      INSERT INTO TBL_EXHIBITION
+      (EXHIBITION_SEQ, MEMBER_SEQ, EXHIBITION_NAME, EXHIBITION_TEXT, START_DATE, END_DATE, CATEGORY_ID, REPORT_CNT, EXHIBITION_STATUS, PARENT_CATEGORY_ID, MAIN_PHOTO_DATA)
+      VALUES(#{exhibition_seq}, #{member_seq}, #{exhibition_name}, #{exhibition_text}, #{start_date}, #{end_date}, #{category_id}, 0, #{exhibition_status}, #{parent_category_id}, #{main_photo_data})
+   </insert>
+   	
+   	<!-- 전시회 업데이트(전시회만들기 페이지) -->
+   	<update id="updateExhibition" parameterType="exhibitionVO">
+		UPDATE TBL_EXHIBITION
+		SET MEMBER_SEQ=#{member_seq}, EXHIBITION_NAME=#{exhibition_name}, EXHIBITION_TEXT=#{exhibition_text}, START_DATE=#{start_date}, END_DATE=#{end_date}, CATEGORY_ID=#{category_id}, EXHIBITION_STATUS=#{exhibition_status}, PARENT_CATEGORY_ID=#{parent_category_id}, MAIN_PHOTO_DATA= #{main_photo_data}
+		WHERE EXHIBITION_SEQ=#{exhibition_seq}
+	</update>
+	
+	<!-- 전시회 수정(전시회 관리하기) -->
+	<update id="modifyExhibition" parameterType="exhibitionVO">
+		UPDATE TBL_BOARD 
+		SET EXHIBITION_NAME=#{exhibition_name}, EXHIBITION_TEXT=#{exhibition_text}, START_DATE=#{start_date}, END_DATE=#{end_date}, CATEGORY_ID=#{category_id}, EXHIBITION_STATUS=#{exhibition_status}
+		WHERE EXHIBITION_SEQ=#{exhibition_seq}
+	</update>
+	
+	<!-- 전시회 번호 가져오기 -->
+	<select id="getSeq" resultType="_int">
+		SELECT EXHIBITION_SEQ.CURRVAL FROM DUAL
+	</select>
+	
+	<!-- 전시회 번호로 member_seq 가져오기 -->
+	<select id="getMemberSeq" resultType="_int">
+		SELECT MEMBER_SEQ FROM TBL_EXHIBITION WHERE EXHIBITION_SEQ=#{exhibition_seq}
+	</select>
+	
+	<!-- 전시회 번호를 전달받아서 해당 전시회 전체 내용을 리턴 -->
+	<select id="getDetail" parameterType="_int" resultType="exhibitionVO">
+		SELECT * FROM TBL_EXHIBITION WHERE EXHIBITION_SEQ = #{exhibition_seq}
+	</select>
+	
+	<!-- 전시회 번호를 전달받아서 해당 전시회 설명을 리턴 -->
+	<select id="getExhibitionText" parameterType="_int" resultType="string">
+		SELECT EXHIBITION_TEXT FROM TBL_EXHIBITION WHERE EXHIBITION_SEQ = #{exhibition_seq}
+	</select>
+	
+	<!-- 전시회 번호를 전달받아서 해당 전시회 제목을 리턴 -->
+	<select id="getExhibitionTitle" parameterType="_int" resultType="string">
+		SELECT EXHIBITION_NAME FROM TBL_EXHIBITION WHERE EXHIBITION_SEQ = #{exhibition_seq}
+	</select>
+	
+	<delete id="deleteExhibition" parameterType="_int">
+		DELETE FROM TBL_EXHIBITION WHERE EXHIBITION_SEQ = ${exhibition_seq}
+	</delete>
+		
+	<!-- 전시회 수정(제목, 설명, 날짜, 카테고리)(사진이랑 음악은 각각 dao에서 관리) -->
+	<update id="updateBoard" parameterType="exhibitionVO">
+		UPDATE TBL_EXHIBITION 
+		SET EXHIBITION_NAME = #{exhibition_name}, EXHIBITION_TEXT = #{exhibition_text} , 
+			START_DATE = #{start_date}, END_DATE = #{end_date}, CATEGORY_ID=#{category_id}
+		WHERE EXHIBITION_SEQ = ${exhibition_seq}
+	</update>
+	
+	<select id="getNextVal" resultType="_int">
+		SELECT TBL_EXHIBITION_SEQ.NEXTVAL FROM DUAL
+	</select>
+	
+	<!-- 전시회 좋아요 개수 수정 -->
+	<update id="updateLikeCnt" parameterType="exhibitionVO">
+		UPDATE TBL_EXHIBITION
+		SET LIKE_CNT=#{like_cnt}
+		WHERE EXHIBITION_SEQ=#{exhibition_seq}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

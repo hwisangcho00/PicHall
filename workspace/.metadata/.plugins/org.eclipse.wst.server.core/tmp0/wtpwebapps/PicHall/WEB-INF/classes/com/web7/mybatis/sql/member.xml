@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+	<insert id="join" parameterType="memberVO">
+		INSERT INTO TBL_MEMBER
+		(MEMBER_SEQ, MEMBER_NAME, MEMBER_ID, MEMBER_PW, MEMBER_NICKNAME,
+		MEMBER_TEXT, MEMBER_EMAIL, MEMBER_PROFILE_PIC, MEMBER_EMAIL_CHECKED, MEMBER_EMAIL_HASH)
+		VALUES(#{member_seq},
+		#{member_name}, #{member_id}, #{member_pw}, #{member_nickname},
+		#{member_text}, #{member_email}, NULL, 0, #{member_email_hash})
+	</insert>
+
+	<select id="checkId" parameterType="string" resultType="_int">
+		SELECT
+		COUNT(*) FROM TBL_MEMBER WHERE MEMBER_ID = #{member_id}
+	</select>
+	
+	<select id="checkEmail" parameterType="string" resultType="_int">
+		SELECT
+		COUNT(*) FROM TBL_MEMBER WHERE MEMBER_EMAIL = #{member_email}
+	</select>
+	
+	<select id="checkPw" parameterType="map" resultType="_int">
+		SELECT
+		COUNT(*) FROM TBL_MEMBER WHERE MEMBER_SEQ = #{member_seq} AND MEMBER_PW = #{member_pw}
+	</select>
+
+	<select id="findId" parameterType="map" resultType="string">
+		SELECT MEMBER_ID FROM TBL_MEMBER WHERE MEMBER_NAME = #{member_name} AND MEMBER_EMAIL = #{member_email}
+	</select>
+	
+	<select id="isExistFindPw" parameterType="map" resultType="_int">
+		SELECT COUNT(*) FROM TBL_MEMBER WHERE MEMBER_ID = #{member_id} AND MEMBER_EMAIL = #{member_email}
+	</select>
+
+	<select id="login" parameterType="map" resultType="_int">
+		SELECT
+		COUNT(*) FROM TBL_MEMBER
+		WHERE MEMBER_ID = #{member_id} AND MEMBER_PW =
+		#{member_pw}
+	</select>
+
+	<select id="getSeq" parameterType="string" resultType="_int">
+		SELECT
+		MEMBER_SEQ FROM TBL_MEMBER WHERE MEMBER_ID = #{member_id}
+	</select>
+
+	<select id="getId" parameterType="int" resultType="string">
+		SELECT
+		MEMBER_ID FROM TBL_MEMBER WHERE MEMBER_SEQ = #{member_seq}
+	</select>
+	
+	<select id="getDetail" parameterType="string" resultType="memberVO">
+		SELECT * FROM TBL_MEMBER WHERE MEMBER_ID = #{member_id}
+	</select>
+
+	<select id="getDetailbySeq" parameterType="_int" resultType="memberVO">
+		SELECT * FROM TBL_MEMBER WHERE MEMBER_SEQ = #{member_seq}
+	</select>
+	
+	<select id="getTextbySeq" parameterType="_int" resultType="string">
+		SELECT MEMBER_TEXT FROM TBL_MEMBER WHERE MEMBER_SEQ = #{member_seq}
+	</select>
+	
+	<select id="getNicknamebySeq" parameterType="_int" resultType="string">
+      SELECT MEMBER_NICKNAME FROM TBL_MEMBER WHERE MEMBER_SEQ = #{member_seq}
+   </select>
+   
+   <select id="getEmailbySeq" parameterType="_int" resultType="string">
+   	SELECT MEMBER_EMAIL FROM TBL_MEMBER WHERE MEMBER_SEQ = #{member_seq}
+   </select>
+   
+   <select id="getNextVal" resultType="_int">
+		SELECT TBL_MEMBER_SEQ.NEXTVAL FROM DUAL
+	</select>
+	
+	<!-- 프로필 사진 관련  -->
+	<update id="insertProfilePic" parameterType="memberVO">
+		UPDATE TBL_MEMBER
+		SET MEMBER_PROFILE_PIC = #{member_profile_pic}
+		WHERE MEMBER_SEQ = #{member_seq}
+	</update>
+	
+	
+	<!-- 멤버 정보 수정 -->
+	<update id="updatePw" parameterType="memberVO">
+		UPDATE TBL_MEMBER
+		SET MEMBER_PW = #{member_pw}
+		WHERE MEMBER_SEQ = #{member_seq}
+	</update>
+	
+	<update id="updateNickname" parameterType="memberVO">
+		UPDATE TBL_MEMBER
+		SET MEMBER_NICKNAME = #{member_nickname}
+		WHERE MEMBER_SEQ = #{member_seq}
+	</update>
+	
+	<update id="updateText" parameterType="memberVO">
+		UPDATE TBL_MEMBER
+		SET MEMBER_TEXT = #{member_text}
+		WHERE MEMBER_SEQ = #{member_seq}
+	</update>
+	
+	<update id="updateEmailChecked" parameterType="memberVO">
+		UPDATE TBL_MEMBER
+		SET MEMBER_EMAIL_CHECKED = 1
+		WHERE MEMBER_SEQ = #{member_seq}
+	</update>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

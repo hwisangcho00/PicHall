@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Subscribe">
+	<insert id="subscribe" parameterType="subscribeVO">
+		INSERT INTO TBL_SUBSCRIBE
+		(FOLLOWING_ID, FOLLOWED_ID)
+		VALUES(#{following_id}, #{followed_id})
+	</insert>
+	
+	<select id="getFollowingList" parameterType="_int" resultType="subscribeVO">
+		SELECT * FROM TBL_SUBSCRIBE WHERE FOLLOWED_ID = #{member_seq}
+	</select>
+
+	<select id="getFollowerList" parameterType="_int" resultType="subscribeVO">
+		SELECT * FROM TBL_SUBSCRIBE WHERE FOLLOWING_ID = #{member_seq}
+	</select>
+	
+	<delete id="unsubscribe" parameterType="subscribeVO">
+		DELETE FROM TBL_SUBSCRIBE
+		WHERE FOLLOWING_ID=#{following_id} AND FOLLOWED_ID=#{followed_id}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

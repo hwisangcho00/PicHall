@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="DBeaver.FilterValueEditMenu">
+		<item value="438" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="417" key="DIALOG_HEIGHT"/>
+		<item value="593" key="DIALOG_X_ORIGIN"/>
+		<item value="631" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="DriverDownload">
+	</section>
+	<section name="DBeaver.StandardErrorDialog">
+		<item value="382" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="194" key="DIALOG_HEIGHT"/>
+		<item value="false" key="showDetails"/>
+		<item value="777" key="DIALOG_X_ORIGIN"/>
+		<item value="399" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="DBeaver.SelectDataSourceDialog">
+		<item value="274" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="687" key="DIALOG_HEIGHT"/>
+		<item value="831" key="DIALOG_X_ORIGIN"/>
+		<item value="70" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="DBeaver.ViewSQLDialog">
+		<item value="538" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="false" key="GenerateSQL.useFQNames"/>
+		<item value="516" key="DIALOG_HEIGHT"/>
+		<item value="false" key="GenerateSQL.compactSQL"/>
+		<item value="699" key="DIALOG_X_ORIGIN"/>
+		<item value="184" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="DBeaver.ActiveWizardDialog.NewConnectionWizard">
+		<item value="733" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="598" key="DIALOG_HEIGHT"/>
+		<item value="602" key="DIALOG_X_ORIGIN"/>
+		<item value="152" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="DBeaver.EditConnectionDialog">
+		<item value="773" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="588" key="DIALOG_HEIGHT"/>
+		<item value="588" key="DIALOG_X_ORIGIN"/>
+		<item value="142" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="DBeaver.DriverDownloadDialog">
+		<item value="525" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="659" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="DBeaver.QM.LogViewer">
+	</section>
+	<section name="DBeaver.DriverTabbedViewer">
+	</section>
+	<section name="ResultSetViewer">
+		<section name="presentations">
+			<section name="spreadsheet">
+				<item value="value-view" key="enabledPanelIds"/>
+				<item value="false" key="panelsVisible"/>
+				<item value="false" key="verticalLayout"/>
+				<item value="213" key="panelRatio"/>
+				<item value="value-view" key="activePanelId"/>
+			</section>
+		</section>
+		<section name="ErrorPresentation">
+		</section>
+	</section>
+</section>

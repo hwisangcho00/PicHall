@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.web7.app.member.vo.MemberVO" alias="memberVO"/>
+		<typeAlias type="com.web7.app.board.vo.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.web7.app.exhibition.vo.ExhibitionVO" alias="exhibitionVO"/>
+		<typeAlias type="com.web7.app.subscribe.vo.SubscribeVO" alias="subscribeVO"/>
+		<typeAlias type="com.web7.app.comment.vo.CommentVO" alias="commentVO"/>
+		<typeAlias type="com.web7.app.attach.vo.AttachVO" alias="attachVO"/>
+		<typeAlias type="com.web7.app.music.vo.MusicVO" alias="musicVO"/>
+		<typeAlias type="com.web7.app.exhibition_category.vo.CategoryVO" alias="categoryVO"/>
+		<typeAlias type="com.web7.app.photo.vo.PhotoVO" alias="photoVO"/>
+		<typeAlias type="com.web7.app.music_exhibition.vo.MusicExhibitionVO" alias="music_exhibitionVO"/>
+		<typeAlias type="com.web7.app.photo_exhibition.vo.PhotoExhibitionVO" alias="photo_exhibitionVO"/>
+		<typeAlias type="com.web7.app.like.vo.LikeVO" alias="likeVO"/>
+		<typeAlias type="com.web7.app.report.vo.ReportVO" alias="ReportVO"/>
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+				<property name="username" value="hr"/>
+				<property name="password" value="hr"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/web7/mybatis/sql/member.xml"/>
+		<mapper resource="com/web7/mybatis/sql/board.xml"/>
+		<mapper resource="com/web7/mybatis/sql/subscribe.xml"/>
+		<mapper resource="com/web7/mybatis/sql/exhibition.xml"/>
+		<mapper resource="com/web7/mybatis/sql/attach.xml"/>
+		<mapper resource="com/web7/mybatis/sql/comment.xml"/>
+		<mapper resource="com/web7/mybatis/sql/music.xml"/>
+		<mapper resource="com/web7/mybatis/sql/category.xml"/>
+		<mapper resource="com/web7/mybatis/sql/photo.xml"/>
+		<mapper resource="com/web7/mybatis/sql/music_exhibition.xml"/>
+		<mapper resource="com/web7/mybatis/sql/photo_exhibition.xml"/>
+		<mapper resource="com/web7/mybatis/sql/like.xml"/>
+		<mapper resource="com/web7/mybatis/sql/report.xml"/>
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

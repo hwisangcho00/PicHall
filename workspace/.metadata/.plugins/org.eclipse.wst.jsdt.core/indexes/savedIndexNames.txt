@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\pichall\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+804150085.index
+1356223479.index
+3734058256.index
+3271193799.index
+214426668.index
+3384428066.index
+3938374191.index

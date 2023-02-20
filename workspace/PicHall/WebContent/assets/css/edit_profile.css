@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+table td th {
+	vertical-align: middle;
+	font-size: 1em;
+	word-wrap: break-word;
+}
+
+input.edit_profile_input {
+	background-color: #fafafa;
+}
+
+@media screen and (max-width: 764px) {
+	#profile_pic {
+		width: 70%;
+	}
+	.okay_btn, #profile_okay_btn {
+		width: 24%;
+		text-align: center;
+		padding: 0px !important;
+	}
+}

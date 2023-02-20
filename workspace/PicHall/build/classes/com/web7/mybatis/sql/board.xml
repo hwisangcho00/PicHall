@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 파라미터로 받은 값에 접근할 때에는 #{} 또는 ${}를 사용하여 가져온다. 1.#{} 받아온 파라미터의 타입에 상관 없이 
+	String 타입으로 변경된다. 사용자가 직접 입력한 값에 사용하는 것이 좋다(보안에 유리하다) 2.${} 받아온 파라미터의 타입을 
+	그대로 유지한다. 사용자가 직접 입력한 값을 전달받을 때에는 사용하지 않는 것이 좋다(쿼리 주입때문에 보안에 취약하다) 테이블이나 
+	컬러명을 파라미터로 받을 때에 사용한다(#{}는 자동으로 따옴표가 붙기 때문) -->
+
+<mapper namespace="Board">
+	<select id="listAll" parameterType="map" resultType="boardVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_BOARD ORDER BY BOARD_SEQ DESC) D) B
+		WHERE B.R BETWEEN
+		${startRow} AND ${endRow}
+	</select>
+	
+	<select id="listSpecificAll" parameterType="map" resultType="boardVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_BOARD WHERE BOARD_CATEGORY_ID = ${board_category_id} ORDER BY BOARD_SEQ DESC) D) B
+		WHERE (B.R BETWEEN
+		${startRow} AND ${endRow})
+	</select>
+	
+	<select id="listSearchAll" parameterType="map" resultType="boardVO">
+		SELECT *
+		FROM
+		(SELECT ROWNUM R, D.* FROM
+		(SELECT * FROM TBL_BOARD WHERE BOARD_TITLE LIKE #{query} ORDER BY BOARD_SEQ DESC) D) B
+		WHERE (B.R BETWEEN
+		${startRow} AND ${endRow})
+		
+	</select>
+
+	<select id="getBoardCnt" resultType="_int">
+		SELECT COUNT(*) FROM
+		TBL_BOARD
+	</select>
+	
+	<select id="getSpecificBoardCnt" parameterType="_int" resultType="_int">
+		SELECT COUNT(*) FROM
+		TBL_BOARD WHERE BOARD_CATEGORY_ID = #{board_category_id}
+	</select>
+
+	<select id="getSearchBoardCnt" parameterType="string" resultType="_int">
+		SELECT COUNT(*) FROM
+		TBL_BOARD WHERE BOARD_TITLE LIKE #{query}
+	</select>
+
+	<insert id="insertBoard" parameterType="boardVO">
+		INSERT INTO TBL_BOARD (BOARD_SEQ, BOARD_TITLE, BOARD_TEXT, BOARD_DATE, BOARD_HITS, BOARD_LIKE, MEMBER_SEQ, BOARD_CATEGORY_ID)
+		VALUES(TBL_BOARD_SEQ.NEXTVAL, #{board_title}, #{board_text}, SYSDATE, 0, 0, #{member_seq}, #{board_category_id})
+	</insert>
+	
+	<select id="getBoard" parameterType="_int" resultType="boardVO">
+		SELECT * FROM TBL_BOARD WHERE BOARD_SEQ = #{board_seq}
+	</select>
+	
+	<update id="modifyBoard" parameterType="boardVO">
+		UPDATE TBL_BOARD 
+		SET BOARD_TITLE = #{board_title}, BOARD_TEXT = #{board_text}, BOARD_CATEGORY_ID = #{board_category_id}
+		WHERE BOARD_SEQ = ${board_seq}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="_int">
+		DELETE FROM TBL_BOARD WHERE BOARD_SEQ = ${board_seq}
+	</delete>
+	
+	<select id="getSeq" resultType="_int">
+		SELECT TBL_BOARD_SEQ.CURRVAL FROM DUAL
+	</select>
+	
+	<select id="getBoardHits" parameterType="_int" resultType="_int">
+		SELECT BOARD_HITS FROM TBL_BOARD WHERE BOARD_SEQ = #{board_seq}
+	</select>
+	
+	<update id="updateBoardHits" parameterType="_int">
+		UPDATE TBL_BOARD
+		SET BOARD_HITS = BOARD_HITS+1 WHERE BOARD_SEQ = #{board_seq}
+	</update>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
